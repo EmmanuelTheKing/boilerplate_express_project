@@ -31,8 +31,12 @@ app.get('/now', function(req, res, next) {
    res.json({time: req.time});
 });
 
+app.get('/',function(req,res){
+  res.json({echo: word});
+})
 
  module.exports = app;
+
 
 
 
