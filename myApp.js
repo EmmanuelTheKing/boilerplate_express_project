@@ -36,8 +36,10 @@ app.get('/:word/echo',function(req,res){
   res.json({echo: word});
 })
 
+app.route('/name').get((req, res) => { var first = req.query.first; var last = req.query.last; var jsonObj = {name: first + ' ' + last}; res.send(jsonObj); }).post();
 
  module.exports = app;
+
 
 
 
