@@ -36,9 +36,21 @@ app.get('/:word/echo',function(req,res){
   res.json({echo: word});
 })
 
-app.route('/name').get((req, res) => { var first = req.query.first; var last = req.query.last; var jsonObj = {name: first + ' ' + last}; res.send(jsonObj); }).post();
-
+app.route('/name')
+  .get((req, res) => {
+    var first = req.query.first;
+    var last = req.query.last;
+    var jsonObj = { name: first + ' ' + last };
+    res.json(jsonObj);
+  })
+  .post((req, res) => {
+    var first = req.body.first;
+    var last = req.body.last;
+    var jsonObj = { name: first + ' ' + last };
+    res.json(jsonObj);
+  });
  module.exports = app;
+
 
 
 
