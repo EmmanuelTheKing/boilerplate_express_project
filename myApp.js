@@ -45,14 +45,11 @@ app.route('/name')
     var last = req.query.last;
     var jsonObj = { name: first + ' ' + last };
     res.json(jsonObj);
-  })
-  .post((req, res) => {
-    var first = req.body.first;
-    var last = req.body.last;
-    var jsonObj = { name: first + ' ' + last };
-    res.json(jsonObj);
   });
+
+
  module.exports = app;
+
 
 
 
